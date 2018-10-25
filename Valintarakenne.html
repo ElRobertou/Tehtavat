@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+  //T1
+
+    let pituus;
+    pituus = prompt('Anna kuhan pituus.');
+    if (pituus<37){
+      pituus = 37- pituus;
+      document.write('Kuha on ' + pituus + ' senttimetriä liian lyhyt laske kuha takaisin järveen.');
+    }
+    else {
+      document.write('Hyvä saalis!' + "<br>");
+    }
+
+  //T2
+
+    let nimi;
+    nimi = prompt('Kerro nimesi.');
+  const rndn = Math.floor(3*Math.random());
+
+  switch (rndn) {
+    case 1:
+      document.write(nimi + ' , olet Rohkelikko' + "<br>");
+      break;
+    case 2:
+      document.write(nimi + ' , olet Luihuinen' + "<br>");
+      break;
+    case 3:
+      document.write(nimi + ' , olet Puuskupuh' + "<br>");
+      break;
+    default:
+      document.write(nimi + ' , olet Korpinkynsi' + "<br>");
+
+  }
+
+  //T3
+
+    let sukupuoli = prompt('Oletko mies vai nainen? ');
+    let arvo = prompt('Kerro hemoglobiini arvosi. ');
+
+    if(sukupuoli == 'mies') {
+      if (arvo >= 117 && arvo <= 175){
+        alert('Olet kunnossa');
+      } else{
+        alert('mene hoitoon');}
+
+    }else {
+      if (arvo >= 134 && arvo <= 195) {
+        alert('Olet kunnossa');
+      }else{
+        alert('mene hoitoon');
+      }
+    }
+
+
+
+</script>
+</body>
+</html>
