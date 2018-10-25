@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+  //T1
+
+
+
+  'use strict';
+  document.write('<p>Tämä on JavaScript-ohjelma!</p>');
+
+  //T2
+
+  let nimi;
+  nimi = prompt("Anna nimi:");
+  document.write("Terve, " + nimi + "<br>");
+
+  //T3
+
+  let luku;
+  luku = prompt("Anna ympyrän säde:")
+  document.write("Ympyrän säde metreinä: "+ Math.PI*(luku)*(luku) + "m<sup>2</sup><br>");
+
+  //T4
+
+  let kanta, korkeus, piiri, pinta;
+  kanta = prompt("Anna suorakulmion kanta:");
+  korkeus = prompt("Anna suorakulmion korkeus:");
+  piiri = +kanta + +kanta + +korkeus + +korkeus;
+  pinta = kanta * korkeus
+  document.write("Suorakulmion piiri: "+ piiri + "m<br>");
+  document.write("Suorakulmion pinta-ala: "+ pinta + "m<sup>2</sup><br>");
+
+  //T5
+
+  let numero1, numero2, numero3, summa, tulo, keskiarvo;
+  numero1 = prompt("Anna ensimmäinen kokonaisnumero:");
+  numero2 = prompt("Anna toinen kokonaisnumero:");
+  numero3 = prompt("Anna kolmas kokonaisnumero:");
+  summa = +numero1 + +numero2 + +numero3;
+  tulo = +numero1 * +numero2 * +numero3;
+  keskiarvo = (+numero1 + +numero2 + +numero3) / +3;
+  document.write("Numeroiden summa: "+ summa + "<br>");
+  document.write("Numeroiden tulo: "+ tulo + "<br>");
+  document.write("Numeroiden keskiarvo: "+ keskiarvo + "<br>");
+
+  //T6
+
+  function desimaali(x) {
+    return Number.parseFloat(x).toFixed(2);
+  }
+
+  let leiviska, naula, luoti, nykyLe, nykyNa, nykyLu, nykyMitta, kilot, grammat;
+  leiviska = prompt("Montako leiviskaa?");
+  naula = prompt("Montako naulaa?");
+  luoti = prompt("Montako luotia?");
+  nykyLu = 13.3;
+  nykyNa = 32 * +nykyLu;
+  nykyLe = 20 * +nykyNa;
+  nykyMitta = +luoti * +nykyLu + +naula * +nykyNa + +leiviska * +nykyLe;
+  kilot = (Math.floor(+nykyMitta/1000));
+  grammat = +nykyMitta - +kilot*1000;
+  document.write("Massa nykymittojen mukaan: "+ kilot + "Kg ja " + (desimaali(grammat)) + "g<br>");
+
+  //T7
+
+  let saldo, korkoprosentti, vuosikorko, vuosisaldo;
+  saldo = prompt("Tilin saldo:");
+  korkoprosentti = prompt("Korkoprosentti:");
+  vuosikorko = +saldo * +korkoprosentti/100;
+  vuosisaldo = +saldo + +vuosikorko;
+
+  document.write("Vuosikorko: "+ (desimaali(vuosikorko)) + "€, Saldo vuoden lopusa:" + (desimaali(vuosisaldo)) + "€<br>");
+
+  //T8
+
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+
+  let yes, noppa1, noppa2, summa2;
+  noppa1 = getRandomInt(6);
+  noppa2 = getRandomInt(6);
+  summa2 = +noppa1 + +noppa2;
+  yes = (prompt("Heitetäänkö noppaa? yes/no"));
+  if (yes == "yes"){
+    document.write("Heitit silmäluvut: " +noppa1 + " ja " + +noppa2 + ", joiden summa on: " + summa2 + "<br>");
+  } else {
+    document.write("Et heittänyt noppaa." + "<br>");
+  }
+
+  //T9
+
+  let num1, num2, num3, num4;
+
+  document.write("Kolmenumeroinen koodi: " + (num1=getRandomInt(9)) + ", "+ (num2=getRandomInt(9)) + ", "+ (num3=getRandomInt(9)) + "<br>");
+  document.write("Neljänumeroinen koodi: " + (num1=getRandomInt(6)) + ", "+ (num2=getRandomInt(6)) + ", "+ (num3=getRandomInt(6)) + ", "+ (num4=getRandomInt(6)));
+
+</script>
+</body>
+</html>
