@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+  //T1
+
+
+  //T2
+
+
+  //T3
+
+  function myFunction2(){
+    let alku, loppu, tulos;
+    alert("Tulostetaan karkausvuodet antamaltasi aikaväliltä.");
+    alku = prompt("Anna aloitusvuosi:");
+    loppu = prompt("Anna loppuvuosi:");
+    for (alku; alku <= loppu; alku++) {
+      if ((alku % 4 == 0 && alku % 100 != 0) || alku % 400 == 0){
+        tulos = alku;
+        let node = document.createElement("LI");
+        let textnode = document.createTextNode(tulos);
+        node.appendChild(textnode);
+        document.getElementById("lista").appendChild(node);
+      }
+    }
+  }
+
+</script>
+<button onclick="myFunction2()"> moi </button>
+<ul id="lista">
+</ul>
+</body>
+</html>
