@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Taulukot</title>
+</head>
+<body>
+<div style="text-align: center;">
+    <h1>Taulukot</h1>
+
+    <button onclick="myFunction0()">Käänteinen tulostus</button>
+    <button onclick="myFunction1()">Osallistujien tulostus</button>
+    <button onclick="myFunction2()">Koirien tulostus</button>
+    <button onclick="myFunction3()">Numeroiden tulostelua</button>
+    <button onclick="myFunction4()">Duplikaatti</button>
+    <button onclick="myFunction5()">Mediaani</button>
+
+
+    <p id="teksti"></p>
+
+
+    <ul id="lista"></ul>
+</div>
+
+<script>
+  //TEHT-1--------------------------------------------------------------------------------------------------------------
+  function myFunction0() {
+    let prompti, luku, txt;
+    let array = [];
+    alert('Tulostetaan annettuja lukuja käänteisessä järjestyksessä.');
+    for (luku = 0; luku < 5; luku++) {
+      prompti = prompt('Anna luku:');
+      array.push(prompti);
+      if (prompti === null || prompti === '') {
+        luku = 5;
+        txt = ('Peruutit syötön!');
+        document.getElementById('teksti').innerHTML = txt;
+      }
+    }
+    if (luku === 5) {
+      txt = ('Numerot: ' + array.reverse());
+      document.getElementById('teksti').innerHTML = txt;
+    }
+  }
+  //TEHT-2--------------------------------------------------------------------------------------------------------------
+  function myFunction1() {
+    let osallistuja, osmaara, prompti, maara = 1, txt;
+    let array = [];
+    alert('Tulostetaan numeroitu osallistuja luettelo.');
+    osmaara = prompt('Kuinka monta osallistujaa?');
+    for (osallistuja = 0; osallistuja < osmaara; osallistuja++) {
+      prompti = prompt('Anna osallistujan nimi: ' + (osallistuja + 1));
+      array.push(prompti);
+      let node = document.createElement('LI');
+      let textnode = document.createTextNode(maara++ + ' ' + array.slice(-1));
+      node.appendChild(textnode);
+      document.getElementById('lista').appendChild(node);
+      if (prompti === null || prompti === '') {
+        osallistuja = osmaara;
+        txt = ('Peruutit syötön!');
+        document.getElementById('teksti').innerHTML = txt;
+      }
+    }
+  }
+  //TEHT-3--------------------------------------------------------------------------------------------------------------
+  function myFunction2() {
+    let koira, prompti, txt;
+    let array = [];
+    alert('Tulostetaan annettuja koirien nimet käänteisessä järjestyksessä.');
+    for (koira = 0; koira < 6; koira++) {
+      prompti = prompt('Anna koiran nimi:' + (koira + 1));
+      array.push(prompti);
+      /*let node = document.createElement('LI');
+      node.appendChild(document.createTextNode(array[koira]));
+      document.getElementById('lista').appendChild(node);*/
+      txt = ('Koirat: ' + array.sort().reverse().join(', '));
+      document.getElementById('teksti').innerHTML = txt;
+      if (prompti === null || prompti === '') {
+        koira = 6;
+        txt = ('Peruutit syötön!');
+        document.getElementById('teksti').innerHTML = txt;
+      }
+    }
+  }
+  //TEHT-4--------------------------------------------------------------------------------------------------------------
+  function myFunction3() {
+    let prompti, txt;
+    let array = [];
+    alert('Tulostetaan annettuja lukuja käänteisessä järjestyksessä.');
+    do {
+      prompti = prompt('Anna luku:');
+      array.push(prompti);
+    }
+    while (+prompti !== 0);
+    if (+prompti === 0) {
+      array.splice(-1);
+      txt = ('Numerot: ' + array.sort(function(a, b) {
+        return b - a;
+      }).join(', '));
+      document.getElementById('teksti').innerHTML = txt;
+    } else if (prompt === null || prompti === '') {
+    }
+  }
+  //TEHT-5--------------------------------------------------------------------------------------------------------------
+  function myFunction4() {
+    let array = [];
+    let koko = 1000, prompti, i, txt;
+    for (i = 0; i < koko; i++) {
+      prompti = prompt('Anna luku:');
+      if (prompt === null || prompti === '') {
+        txt = ('Peruutit söytön!');
+        document.getElementById('teksti').innerHTML = txt;
+        return;
+      } else if (array.includes(prompti)) {
+        alert('Luku on jo syötetty!');
+        return;
+      } else {
+        array.push(prompti);
+        console.log(array);
+      }
+    }
+  }
+  //TEHT-6--------------------------------------------------------------------------------------------------------------
+  function myFunction5() {
+    let prompti = 1, txt;
+    let array = [];
+    alert('Tulostetaan annettuja lukuja käänteisessä järjestyksessä.');
+    while (+prompti !== 0) {
+      prompti = prompt('Anna luku:');
+      array.push(prompti);
+    }
+    if (+prompti === 0 || prompti == null) {
+      array.splice(-1);
+      array.sort(function(a, b) {
+        return a - b;
+      });
+      if (array.length % 2 === 0) {
+        txt = (+array[array.length / 2] + +array[(array.length / 2) - 1]) / 2;
+        document.getElementById('teksti').innerHTML = txt;
+      } else {
+        txt = +array[(array.length - 1) / 2];
+        document.getElementById('teksti').innerHTML = txt;
+      }
+    }
+  }
+</script>
+</body>
+</html>
