@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Taulukot</title>
+</head>
+<body>
+<div style="text-align: center;">
+    <h1>Taulukot</h1>
+
+    <button onclick="myFunction0()">Gallonat</button>
+    <button onclick="myFunction1()">Itseisarvo</button>
+    <button onclick="myFunction2()">Suurin arvo</button>
+    <button onclick="myFunction3()">Liitä yhteen</button>
+    <button onclick="myFunction4()">Vastaluvut</button>
+    <button onclick="myFunction5()">Parilliset</button>
+
+    <p id="teksti"></p>
+
+    <ul id="lista"></ul>
+
+</div>
+
+<script>
+  //T1-2
+  function muunnos(p) {
+    let galloonaMuunnos;
+    galloonaMuunnos = (p * 3.785);
+    return galloonaMuunnos;
+  }
+  function myFunction0() {
+    let prompti, txt;
+    alert('Muutetaan galloonat litroiksi.');
+    prompti = prompt('Anna bensiinin määrä galloonissa:');
+    txt = ('Galloonat litroina: ' + muunnos(prompti) + 'L');
+    document.getElementById('teksti').innerHTML = txt;
+  }
+  //T3
+  function itseisarvo(i) {
+    let itseis;
+    itseis = Math.abs(i);
+    return itseis;
+  }
+  function myFunction1() {
+    let prompti, txt;
+    alert('Lasketaan luvun itseisarvo.');
+    prompti = prompt('Anna kokonaisluku:');
+    txt = ('Luvun ' + prompti + ' itseisarvo on: ' + itseisarvo(prompti));
+    document.getElementById('teksti').innerHTML = txt;
+  }
+  //T4
+  function suurinArvo(s) {
+    let arrayArr;
+    arrayArr = Math.max(...s);
+    return arrayArr;
+  }
+  function myFunction2() {
+    let prompti, luku, txt;
+    let suurin = [];
+    alert('Selvitetään suurin arvo syöttämistäsi luvuista.');
+    for (luku = 0; luku < 3; luku++) {
+      prompti = prompt('Anna luku:');
+      suurin.push(prompti);
+    }
+    txt = ('Suurin luku on: ' + suurinArvo(suurin));
+    document.getElementById('teksti').innerHTML = txt;
+  }
+  //T5
+  function liite(s) {
+    let array = s, txt;
+    txt = ('Nimet yhdessä on: ' + array.join(''));
+    document.getElementById('teksti').innerHTML = txt;
+  }
+  function myFunction3() {
+    let nimet = ['Viivi', 'Saara', 'Pekka'];
+    alert('Liitetään nimet Viivi, Saara ja Pekka yhteen.');
+    liite(nimet);
+  }
+  //T6
+  function vastaluvuksi(v) {
+    let array = v, i, txt;
+    let arrayReverse = [];
+    for (i = 0; i < array.length; i++) {
+      arrayReverse.push(array[i] * -1);
+    }
+    txt = ('Vastaluvut ovat: ' + arrayReverse);
+    document.getElementById('teksti').innerHTML = txt;
+  }
+  function myFunction4() {
+    let taulukko = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    alert('Muutetaan taulukon numerot vastaluvuiksi.');
+    vastaluvuksi(taulukko);
+  }
+  //T7
+  function parilliset(p) {
+    let array = p, txt, i;
+    let parilliset = [];
+    for (i = 0; i < array.length; i++) {
+      if (array[i] % 2 === 0) {
+        parilliset.push(array[i]);
+      }
+    }
+    txt = ('Parilliset luvut ovat: ' + parilliset);
+    document.getElementById('teksti').innerHTML = txt;
+  }
+  function myFunction5() {
+    let numerot = [0, 1, 2, 3, 4];
+    alert('Ilmoitetaan parilliset luvut');
+    parilliset(numerot);
+  }
+</script>
+</body>
+</html>
