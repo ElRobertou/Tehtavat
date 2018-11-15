@@ -1,0 +1,53 @@
+body {
+    background: lightcyan;
+}
+h1{
+    color: navy;
+    font-size: 5rem;
+    font-weight: bolder;
+    font-family: "Footlight MT Light"
+}
+textarea{
+    resize: none;
+}
+button{
+    background-color: #2658aF;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: flow;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+
+}
+
+.site{
+    text-align: center;
+}
+.movies{
+    background: rgba(130, 130, 300, 0.50);
+}
+.movies2{
+    opacity: 1;
+
+}
+.flex-grid {
+    display: flex;
+}
+.col {
+    flex: 3;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+}
+.grid-item {
+    font-size: 30px;
+    text-align: center;
+}
